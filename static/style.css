@@ -1,0 +1,130 @@
+:root {
+    --bg: #f6f2ea;
+    --ink: #1f1f1f;
+    --accent: #136f63;
+    --accent-2: #f2a900;
+    --card: #fffdf8;
+    --border: #d7cfbf;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: "Space Grotesk", sans-serif;
+    color: var(--ink);
+    background:
+        radial-gradient(circle at 15% 15%, #ffe7b8 0%, transparent 30%),
+        radial-gradient(circle at 90% 80%, #b7e9dd 0%, transparent 35%),
+        var(--bg);
+}
+
+.page {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 2rem 1rem 3rem;
+}
+
+.hero h1 {
+    font-family: "Source Serif 4", serif;
+    font-size: clamp(2rem, 4vw, 3.4rem);
+    margin: 0.25rem 0 0.5rem;
+}
+
+.eyebrow {
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-weight: 700;
+    color: var(--accent);
+    margin: 0;
+}
+
+.subtitle {
+    max-width: 70ch;
+    margin: 0;
+}
+
+.card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 1rem;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+    margin-top: 1rem;
+    animation: rise 0.5s ease;
+}
+
+@keyframes rise {
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.predict-form {
+    display: grid;
+    gap: 0.7rem;
+}
+
+textarea {
+    width: 100%;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 0.75rem;
+    font-family: inherit;
+    resize: vertical;
+}
+
+button {
+    width: fit-content;
+    background: linear-gradient(135deg, var(--accent), #0f8f7f);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 0.6rem 1.1rem;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.prediction {
+    margin-top: 0.75rem;
+    padding: 0.75rem;
+    border-left: 5px solid var(--accent-2);
+    background: #fff5db;
+    border-radius: 8px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.94rem;
+}
+
+th,
+td {
+    border-bottom: 1px solid var(--border);
+    text-align: left;
+    padding: 0.5rem 0.45rem;
+}
+
+th {
+    color: #3f3f3f;
+}
+
+@media (min-width: 880px) {
+    .grid {
+        grid-template-columns: 1fr 1.3fr;
+    }
+}
